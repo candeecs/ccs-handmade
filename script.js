@@ -95,3 +95,57 @@ window.onload = function() {
     cargarTienda();
     inicializarMenuMovil();
 };
+
+// 5. Envío asíncrono del formulario para saltar el bloqueo de Formspree
+function inicializarFormularioAsincrono() {
+    const formulario = document.getElementById("mi-formulario");
+    if (!formulario) return;
+
+    formulario.addEventListener("submit", async function(event) {
+        event.preventDefault(); // Evita que la página se recargue o se vaya a la web gris
+        
+        const botonEnviar = formulario.querySelector(".btn-enviar");
+        const textoOriginal = botonEnviar.innerText;
+        botonEnviar.innerText = "Enviando...";
+        botonEnviar.disabled = true;
+
+        const datos = new FormData(formulario);
+
+        try {
+            const respuesta = await fetch(formulario.action, {
+                method: formulario.method,
+                body: datos,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (respuesta.ok) {
+                // ¡MÁGIA! Si se envía bien, redirigimos nosotros por código a tu pantalla con el logo
+                window.location.href = "gracias.html";
+            } else {
+                alert("Vaya, hubo un problema al enviar tu encargo. ¡Inténtalo de nuevo!");
+                botonEnviar.innerText = textoOriginal;
+                botonEnviar.disabled = false;
+            }
+        } catch (error) {
+            alert("Error de conexión. Revisa tu internet e inténtalo de nuevo.");
+            botonEnviar.innerText = textoOriginal;
+            botonEnviar.disabled = false;
+        }
+    });
+}
+
+// Actualizamos el window.onload para incluir esta función también
+const funcionOnloadAnterior = window.onload;
+window.onload = function() {
+    if (typeof funcionOnloadAnterior === 'function') {
+        funcionOnloadAnterior();
+    } else {
+        // Por seguridad, si por lo que sea se pisa, aseguramos que cargue la tienda
+        if (typeof generarMenu === 'function') generarMenu();
+        if (typeof cargarTienda === 'function') cargarTienda();
+        if (typeof inicializarMenuMovil === 'function') inicializarMenuMovil();
+    }
+    inicializarFormularioAsincrono();
+};
