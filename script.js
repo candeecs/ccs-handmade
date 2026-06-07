@@ -1,4 +1,4 @@
-// 1. Tu inventario de productos (He puesto las extensiones en .jpeg)
+// 1. Tu inventario de productos con "Cenicero personalizado"
 const misProductos = [
     {
         id: "amigurumis",
@@ -35,24 +35,24 @@ function generarMenu() {
     const nav = document.getElementById("menu-dinamico");
     if (!nav) return;
     
-    nav.innerHTML = ""; // Limpiamos el menú vacío
+    nav.innerHTML = ""; 
 
-    // Creamos un botón en el menú por cada categoría de la lista
     misProductos.forEach(producto => {
         const enlaceHTML = `<a href="#${producto.id}">${producto.categoria}</a>`;
         nav.innerHTML += enlaceHTML;
     });
 
-    // Añadimos el enlace estático de "Sobre Mí" al final
     nav.innerHTML += `<a href="#sobre-mi">Sobre Mí</a>`;
 }
 
-// 3. Función para pintar las tarjetas de los productos en la cuadrícula
+// 3. Función para pintar las tarjetas de los productos
 function cargarTienda() {
-    const contenedor = document.getElementById("grid-dinamico");
-    if (!contenedor) return;
+    const contenedor = document.getElementById("grid-dynamico");
+    const contenedorAlternativo = document.getElementById("grid-dinamico");
+    const realContainer = contenedor || contenedorAlternativo;
+    if (!realContainer) return;
     
-    contenedor.innerHTML = ""; // Limpiamos el contenedor
+    realContainer.innerHTML = ""; 
 
     misProductos.forEach(producto => {
         const tarjetaHTML = `
@@ -65,12 +65,33 @@ function cargarTienda() {
                 <span class="precio">${producto.precio}</span>
             </div>
         `;
-        contenedor.innerHTML += tarjetaHTML;
+        realContainer.innerHTML += tarjetaHTML;
     });
 }
 
-// Lanzamos ambas funciones a la vez cuando el navegador termine de cargar la web
+// 4. Lógica para el menú hamburguesa en móviles
+function inicializarMenuMovil() {
+    const boton = document.getElementById("boton-menu");
+    const nav = document.getElementById("menu-dinamico");
+
+    if (boton && nav) {
+        boton.addEventListener("click", () => {
+            boton.classList.toggle("active");
+            nav.classList.toggle("active");
+        });
+
+        nav.addEventListener("click", (e) => {
+            if (e.target.tagName === 'A') {
+                boton.classList.remove("active");
+                nav.classList.remove("active");
+            }
+        });
+    }
+}
+
+// ÚNICO PUNTO DE ENTRADA: Lanzamos todo junto al cargar la página
 window.onload = function() {
     generarMenu();
     cargarTienda();
+    inicializarMenuMovil();
 };

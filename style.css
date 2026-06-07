@@ -11,15 +11,15 @@ html {
 
 body {
     font-family: 'Comfortaa', display;
-    background-color: #EEECE3; /* El color beige de fondo de tu logo */
+    background-color: #EEECE3; 
     color: #333333;
     line-height: 1.6;
 }
 
 /* 2. EL ENCABEZADO (HEADER) */
 header {
-    background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con transparencia */
-    backdrop-filter: blur(5px); /* Efecto difuminado moderno */
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(5px); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #A4B7A3; /* Se vuelve verde salvia al pasar el ratón */
+    color: #A4B7A3; 
 }
 
 /* 3. SECCIÓN PRINCIPAL (HERO) */
@@ -80,7 +80,7 @@ nav a:hover {
 
 /* EL BOTÓN COZY */
 .btn-cozy {
-    background-color: #E07A5F; /* Fondo terracota cálido */
+    background-color: #E07A5F; 
     color: white;
     border: none;
     padding: 15px 35px;
@@ -101,7 +101,7 @@ nav a:hover {
 /* 4. SECCIÓN DE PRODUCTOS */
 .seccion-productos {
     padding: 60px 50px;
-    background-color: #fff; /* Fondo blanco para las tarjetas */
+    background-color: #fff; 
 }
 
 .titulo-seccion {
@@ -172,4 +172,71 @@ nav a:hover {
     font-size: 14px;
     color: #666;
     font-weight: bold;
+}
+
+/* 5. MENÚ RESPONSIVE (MÓVILES) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #A4B7A3; 
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; 
+    }
+
+    nav {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: rgba(238, 236, 227, 0.95); 
+        backdrop-filter: blur(10px);
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    nav a {
+        margin-left: 0; 
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav.active {
+        max-height: 350px; 
+        padding: 25px 0;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 }
