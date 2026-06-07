@@ -42,7 +42,7 @@ function generarMenu() {
         nav.innerHTML += enlaceHTML;
     });
 
-    nav.innerHTML += `<a href="#sobre-mi">Sobre Mí</a>`;
+    nav.innerHTML += `<a href="#contacto">Contacto</a>`;
 }
 
 // 3. Función para pintar las tarjetas de los productos

@@ -240,3 +240,100 @@ nav a:hover {
         transform: translateY(-9px) rotate(-45deg);
     }
 }
+
+/* 5. SECCIÓN CONTACTO Y SOBRE MÍ (FLUJO VERTICAL) */
+.seccion-contacto {
+    padding: 80px 20px;
+    background-color: #EEECE3; /* El beige de tu logo */
+}
+
+.contenedor-contacto-unico {
+    max-width: 650px; /* Al ser una columna, la hacemos estrecha para que se lea genial */
+    margin: 0 auto;
+    background-color: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.bloque-sobre-mi-vertical {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-contacto {
+    font-size: 24px;
+    color: #A4B7A3; /* Tu verde salvia */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.texto-sobre-mi {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Una línea sutil de separación */
+.divisor-cozy {
+    border: none;
+    height: 2px;
+    background-color: #EEECE3;
+    margin: 35px 0;
+}
+
+/* FORMULARIO */
+.formulario-cozy {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.grupo-input label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #666;
+}
+
+.grupo-input input, .grupo-input textarea {
+    font-family: 'Comfortaa', display;
+    padding: 12px;
+    border: 2px solid #EEECE3;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.grupo-input input:focus, .grupo-input textarea:focus {
+    border-color: #A4B7A3;
+}
+
+.btn-enviar {
+    background-color: #E07A5F; /* Terracota */
+    color: white;
+    border: none;
+    padding: 14px;
+    font-family: 'Comfortaa', display;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #c9664c;
+}
+
+.btn-enviar:active {
+    transform: scale(0.98);
+}

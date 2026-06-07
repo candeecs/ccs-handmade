@@ -35,7 +35,44 @@
             <h3 class="titulo-seccion">Nuestras Creaciones</h3>
             <div id="grid-dinamico" class="grid-productos"></div>
         </section>
-    </main>
+
+        <section id="contacto" class="seccion-contacto">
+            <div class="contenedor-contacto-unico">
+                
+                <div class="bloque-sobre-mi-vertical">
+                    <h3 class="titulo-contacto">Detrás de las puntadas</h3>
+                    <p class="texto-sobre-mi">
+                        ¡Hola! Soy Candela. <strong>CCS Handmade</strong> nace en Córdoba de la pasión por el crochet, la cerámica y las cosas hechas despacio y con amor. Cada pieza que ves aquí está creada 100% a mano, buscando transmitir esa calidez tan <em>cozy</em> de lo artesanal. ¡Gracias por apoyar este pequeño gran proyecto!
+                    </p>
+                </div>
+
+                <hr class="divisor-cozy">
+
+                <div class="bloque-formulario-vertical">
+                    <h3 class="titulo-contacto">¿Quieres un encargo personalizado?</h3>
+                    <form action="https://formspree.io/f/xwvjljkb" method="POST" class="formulario-cozy">
+                        <div class="grupo-input">
+                            <label for="nombre">Tu Nombre</label>
+                            <input type="text" id="nombre" name="name" placeholder="Ej. Amelia" required>
+                        </div>
+                        
+                        <div class="grupo-input">
+                            <label for="email">Tu Correo</label>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
+                        </div>
+                        
+                        <div class="grupo-input">
+                            <label for="mensaje">¿Qué te gustaría pedirme?</label>
+                            <textarea id="mensaje" name="message" rows="4" placeholder="Cuéntame tu idea (colores, tamaños, formas...)" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        </main>
 
     <script src="script.js"></script>
 </body>
