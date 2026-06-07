@@ -337,3 +337,52 @@ nav a:hover {
 .btn-enviar:active {
     transform: scale(0.98);
 }
+
+/* Ajuste del main para que el contenido se apile en vertical */
+        .seccion-gracias {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px; /* Un poco más de margen arriba y abajo */
+            background-color: #EEECE3; /* El beige de tu logo */
+        }
+
+        /* La tarjeta blanca se queda igual */
+        .caja-gracias {
+            background-color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            max-width: 500px;
+            margin-bottom: 50px; /* Margen abajo para que el logo respire */
+        }
+
+        /* ESTILOS PARA EL LOGO FINAL */
+        .contenedor-logo-final {
+            width: 100%;
+            max-width: 400px; /* Ancho máximo para que no sea GIGANTE en ordenador */
+            margin: 0 auto;
+        }
+
+        .logo-final-grande {
+            width: 100%; /* Ocupa todo el contenedor */
+            height: auto; /* Proporcional */
+            display: block;
+            opacity: 0.8; /* Un pelín transparente para que se funda con el beige de fondo, queda más elegante */
+            transition: opacity 0.3s ease;
+        }
+
+        /* Pequeño toque visual: se vuelve opaco al pasar el ratón */
+        .logo-final-grande:hover {
+            opacity: 1;
+        }
+
+        /* RESPONSIVE: En el móvil, el logo se adapta a la pantalla */
+        @media (max-width: 480px) {
+            .contenedor-logo-final {
+                max-width: 80%; /* Un poco más pequeño en móviles */
+            }
+        }
