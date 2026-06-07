@@ -386,3 +386,53 @@ nav a:hover {
                 max-width: 80%; /* Un poco más pequeño en móviles */
             }
         }
+
+        /* ==========================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================== */
+.footer-cozy {
+    background-color: #A4B7A3; /* Tu verde salvia */
+    color: white;
+    padding: 30px 20px;
+    font-family: 'Comfortaa', display;
+}
+
+.contenido-footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.copyright {
+    font-size: 14px;
+    margin: 0;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 20px;
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+.redes-sociales a:hover {
+    opacity: 0.8; /* Efecto sutil al pasar el ratón */
+}
+
+/* RESPONSIVE: En el móvil se centra todo verticalmente */
+@media (max-width: 480px) {
+    .contenido-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
