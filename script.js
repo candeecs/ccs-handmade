@@ -1,4 +1,6 @@
-// 1. Tu inventario de productos con "Cenicero personalizado"
+// ==========================================
+// 1. INVENTARIO DE PRODUCTOS
+// ==========================================
 const misProductos = [
     {
         id: "amigurumis",
@@ -30,7 +32,9 @@ const misProductos = [
     }
 ];
 
-// 2. Función para crear el menú superior automáticamente
+// ==========================================
+// 2. GENERAR MENÚ DINÁMICO
+// ==========================================
 function generarMenu() {
     const nav = document.getElementById("menu-dinamico");
     if (!nav) return;
@@ -45,14 +49,14 @@ function generarMenu() {
     nav.innerHTML += `<a href="#contacto">Contacto</a>`;
 }
 
-// 3. Función para pintar las tarjetas de los productos
+// ==========================================
+// 3. CARGAR TIENDA (TARJETAS)
+// ==========================================
 function cargarTienda() {
-    const contenedor = document.getElementById("grid-dynamico");
-    const contenedorAlternativo = document.getElementById("grid-dinamico");
-    const realContainer = contenedor || contenedorAlternativo;
-    if (!realContainer) return;
+    const contenedor = document.getElementById("grid-dinamico");
+    if (!contenedor) return;
     
-    realContainer.innerHTML = ""; 
+    contenedor.innerHTML = ""; 
 
     misProductos.forEach(producto => {
         const tarjetaHTML = `
@@ -65,11 +69,13 @@ function cargarTienda() {
                 <span class="precio">${producto.precio}</span>
             </div>
         `;
-        realContainer.innerHTML += tarjetaHTML;
+        contenedor.innerHTML += tarjetaHTML;
     });
 }
 
-// 4. Lógica para el menú hamburguesa en móviles
+// ==========================================
+// 4. LÓGICA MENÚ HAMBURGUESA (MÓVILES)
+// ==========================================
 function inicializarMenuMovil() {
     const boton = document.getElementById("boton-menu");
     const nav = document.getElementById("menu-dinamico");
@@ -89,22 +95,19 @@ function inicializarMenuMovil() {
     }
 }
 
-// ÚNICO PUNTO DE ENTRADA: Lanzamos todo junto al cargar la página
-window.onload = function() {
-    generarMenu();
-    cargarTienda();
-    inicializarMenuMovil();
-};
-
-// 5. Envío asíncrono del formulario para saltar el bloqueo de Formspree
+// ==========================================
+// 5. ENVÍO ASÍNCRONO DEL FORMULARIO
+// ==========================================
 function inicializarFormularioAsincrono() {
     const formulario = document.getElementById("mi-formulario");
     if (!formulario) return;
 
     formulario.addEventListener("submit", async function(event) {
-        event.preventDefault(); // Evita que la página se recargue o se vaya a la web gris
+        event.preventDefault(); // Detiene la pantalla gris de Formspree
         
         const botonEnviar = formulario.querySelector(".btn-enviar");
+        if (!botonEnviar) return;
+
         const textoOriginal = botonEnviar.innerText;
         botonEnviar.innerText = "Enviando...";
         botonEnviar.disabled = true;
@@ -121,31 +124,27 @@ function inicializarFormularioAsincrono() {
             });
 
             if (respuesta.ok) {
-                // ¡MÁGIA! Si se envía bien, redirigimos nosotros por código a tu pantalla con el logo
+                // Redirección manual forzada por código
                 window.location.href = "gracias.html";
             } else {
-                alert("Vaya, hubo un problema al enviar tu encargo. ¡Inténtalo de nuevo!");
+                alert("Hubo un problema al enviar el formulario.");
                 botonEnviar.innerText = textoOriginal;
                 botonEnviar.disabled = false;
             }
         } catch (error) {
-            alert("Error de conexión. Revisa tu internet e inténtalo de nuevo.");
+            alert("Error de conexión al enviar.");
             botonEnviar.innerText = textoOriginal;
             botonEnviar.disabled = false;
         }
     });
 }
 
-// Actualizamos el window.onload para incluir esta función también
-const funcionOnloadAnterior = window.onload;
+// ==========================================
+// EL ÚNICO ARRANQUE DE LA WEB
+// ==========================================
 window.onload = function() {
-    if (typeof funcionOnloadAnterior === 'function') {
-        funcionOnloadAnterior();
-    } else {
-        // Por seguridad, si por lo que sea se pisa, aseguramos que cargue la tienda
-        if (typeof generarMenu === 'function') generarMenu();
-        if (typeof cargarTienda === 'function') cargarTienda();
-        if (typeof inicializarMenuMovil === 'function') inicializarMenuMovil();
-    }
+    generarMenu();
+    cargarTienda();
+    inicializarMenuMovil();
     inicializarFormularioAsincrono();
 };
