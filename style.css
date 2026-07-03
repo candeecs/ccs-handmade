@@ -381,10 +381,28 @@ nav a:hover {
 .logo-final-grande { width: 100%; height: auto; display: block; opacity: 0.8; transition: opacity 0.3s ease; }
 @media (max-width: 480px) { .contenedor-logo-final { max-width: 80%; } }
 
+footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    
+    /* TRUCO PARA AGARRAR TODO EL ANCHO REAL */
+    width: 100vw;                  
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    /* Espaciado interno para que las letras respiren un poco */
+    padding: 30px 40px; 
+    box-sizing: border-box;
+}
+
 .footer-cozy {
     background-color: #C5A880;
     color: white;
-    padding: 40px 20px;
+    /* Quitamos el padding de aquí para que use el del footer general */
 }
 
 .contenido-footer, .redes-sociales {
@@ -392,8 +410,8 @@ nav a:hover {
 }
 
 .contenido-footer {
-    max-width: 1100px;
-    margin: 0 auto;
+    /* CAMBIO CLUCIAL: Quitamos el límite de 1100px y lo estiramos al 100% */
+    width: 100%; 
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
