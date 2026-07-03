@@ -118,8 +118,7 @@ nav a:hover {
     font-style: italic;
     font-size: 19px;
     color: #8C7A78;
-    margin-bottom: 35px;
-    max-width: 650px;
+    justify-content: center;
 }
 
 /* Base unificada para todos los botones de la web */
