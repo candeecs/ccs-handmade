@@ -7,28 +7,32 @@ const misProductos = [
         titulo: "Amigurumi Cozy",
         categoria: "Amigurumis (proximamente)",
         imagen: "imagenes/amigurumi1.jpeg",
-        precio: "Próximamente"
+        precio: "Próximamente",
+        url: "#"
     },
     {
         id: "ropaCrochet",
         titulo: "Top Primavera",
         categoria: "Crochet",
         imagen: "imagenes/prenda1.jpeg",
-        precio: "Próximamente"
+        precio: "Próximamente",
+        url: "crochet.html"
     },
     {
         id: "collares",
         titulo: "Collar Flores",
         categoria: "Collares",
         imagen: "imagenes/collar1.jpeg",
-        precio: "Próximamente"
+        precio: "Próximamente",
+        url: "collares.html"
     },
     {
         id: "ceramica",
         titulo: "Cenicero personalizado",
         categoria: "Cerámica",
         imagen: "imagenes/ceramica1.jpeg",
-        precio: "Próximamente"
+        precio: "Próximamente",
+        url: "ceramica.html"
     }
 ];
 
@@ -42,11 +46,11 @@ function generarMenu() {
     nav.innerHTML = ""; 
 
     misProductos.forEach(producto => {
-        const enlaceHTML = `<a href="#${producto.id}">${producto.categoria}</a>`;
+        const enlaceHTML = `<a href="${producto.id}">${producto.categoria}</a>`;
         nav.innerHTML += enlaceHTML;
     });
 
-    nav.innerHTML += `<a href="#contacto">Contacto</a>`;
+    nav.innerHTML += `<a href="index.html#contacto">Contacto</a>`;
 }
 
 // ==========================================
