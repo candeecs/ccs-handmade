@@ -11,7 +11,7 @@ const misProductos = [
         url: "#"
     },
     {
-        id: "ropaCrochet",
+        id: "Crochet",
         titulo: "Top Primavera",
         categoria: "Crochet",
         imagen: "imagenes/prenda1.jpeg",
