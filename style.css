@@ -101,7 +101,10 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding-top: 60px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
 }
 
 .hero h2 {
@@ -600,4 +603,57 @@ main.seccion-productos {
     main.seccion-productos {
         padding-top: 110px; /* Espacio ajustado para pantallas pequeñas */
     }
+}
+/* ==========================================
+   SECCIÓN HERO / COLLAGE AJUSTADO
+   ========================================== */
+
+/* 1. Contenedor de los textos para que no se solapen con nada */
+.seccion-texto-intro {
+    padding-top: 40px;      /* Espacio arriba para separarlo del menú */
+    margin-bottom: 30px;    /* Espacio abajo para empujar la imagen y que no tape el texto */
+    text-align: center;
+    width: 100%;
+}
+
+/* 2. Contenedor general del collage (Aquí controlamos el tamaño) */
+.seccion-collage-vintage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px auto; /* Centrado y con margen limpio abajo */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 3. La caja que envuelve la imagen (La hacemos más pequeña) */
+.papel-roto-contenedor {
+    position: relative;
+    max-width: 480px;      /* Al bajarlo a 480px se hace más pequeñito y fino en la pantalla */
+    width: 100%;
+    
+    /* Sombra elegante que da efecto de relieve de papel real */
+    filter: drop-shadow(0px 10px 18px rgba(197, 168, 128, 0.2));
+}
+
+/* 4. El nuevo filo de papel roto (Mucho más sutil, suave y limpio) */
+.imagen-collage {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+    /* Filo suavizado que simula el rasgado sutil de un folio craft */
+    clip-path: polygon(
+        0% 2%, 12% 0%, 27% 1.5%, 42% 0.5%, 58% 2%, 74% 0%, 88% 1.5%, 100% 0%, 
+        99.5% 15%, 100% 35%, 99.3% 58%, 100% 82%, 99.5% 100%, 
+        86% 98.5%, 71% 100%, 53% 98%, 38% 99.5%, 22% 98%, 9% 100%, 0% 98.5%, 
+        0.5% 79%, 0% 54%, 0.7% 31%, 0% 12%
+    );
+    
+    transition: transform 0.4s ease;
+}
+
+/* Efecto hover suave */
+.papel-roto-contenedor:hover .imagen-collage {
+    transform: translateY(-3px);
 }
