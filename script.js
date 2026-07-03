@@ -46,7 +46,7 @@ function generarMenu() {
     nav.innerHTML = ""; 
 
     misProductos.forEach(producto => {
-        const enlaceHTML = `<a href="${producto.id}">${producto.categoria}</a>`;
+        const enlaceHTML = `<a href="${producto.url}">${producto.categoria}</a>`;
         nav.innerHTML += enlaceHTML;
     });
 
