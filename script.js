@@ -179,3 +179,17 @@ window.addEventListener('scroll', () => {
         header.classList.remove('header-scroll');
     }
 });
+
+
+// ==========================================
+// EVITAR CLIC DERECHO EN LAS FOTOS DEL CATÁLOGO
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const imagenesCarrusel = document.querySelectorAll('.item-foto-carrusel img');
+    
+    imagenesCarrusel.forEach(img => {
+        img.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); // Bloquea el menú de "Guardar imagen como..."
+        });
+    });
+});
