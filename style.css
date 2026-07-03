@@ -524,8 +524,8 @@ nav a:hover {
     border: none;
     height: 1px;
     background-color: #EAE6DC;
-    margin: 50px 0;
-    width: 80%; /* Un pelín más corta para que quede más estilizada */
+    margin: 50px auto;
+    width: 90%; /* Un pelín más corta para que quede más estilizada */
 }
 
 /* ==========================================
@@ -571,4 +571,15 @@ nav a:hover {
     text-align: center;
     background-color: #F2ECE4;
     z-index: 2;
+}
+/* Le damos un margen superior al main de collares para que no lo tape el header fijo */
+main.seccion-productos {
+    padding-top: 140px; /* Espacio suficiente para que el logo y el menú respiren libres arriba */
+}
+
+/* Si en móvil tu cabecera es un pelín más alta, lo ajustamos también */
+@media (max-width: 768px) {
+    main.seccion-productos {
+        padding-top: 110px; /* Espacio ajustado para pantallas pequeñas */
+    }
 }
