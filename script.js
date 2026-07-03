@@ -167,3 +167,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 8000); // 15000 milisegundos = 15 segundos
     });
 });
+
+// ==========================================
+// EFECTO CABECERA COMPACTA AL BAJAR (SCROLL)
+// ==========================================
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('header-scroll');
+    } else {
+        header.classList.remove('header-scroll');
+    }
+});
