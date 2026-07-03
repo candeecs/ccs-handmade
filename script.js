@@ -164,6 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 carrusel.scrollTo({ left: carrusel.scrollLeft + anchoFoto, behavior: 'smooth' });
             }
-        }, 15000); // 15000 milisegundos = 15 segundos
+        }, 8000); // 15000 milisegundos = 15 segundos
     });
 });
