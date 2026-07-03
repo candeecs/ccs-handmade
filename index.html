@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCS Handmade | Crochet Artesanal</title>
+    <title>CCS Handmade | Diseño artesanal y piezas únicas</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"></head>
 <body>
     <header>
         <div class="logo-contenedor">
@@ -26,15 +25,59 @@
 
     <main>
         <section class="hero">
-            <h2>Ropa de crochet hecha a mano con amor</h2>
-            <p>Diseños únicos y colecciones artesanales.</p>
+            <h2>Artesanía única hecha a mano con amor</h2>
+            <p>Diseños originales con abalorios, cerámica y colecciones con su propia esencia.</p>
             <button class="btn-cozy">Ver Colección</button>
         </section>
 
-        <section id="productos" class="seccion-productos">
-            <h3 class="titulo-seccion">Nuestras Creaciones</h3>
-            <div id="grid-dinamico" class="grid-productos"></div>
+       <section id="productos" class="seccion-productos">
+            <h3 class="titulo-seccion">Creaciones únicas</h3>
+            <div class="contenedor-indice-horizontal">
+                    <div class="tarjeta-categoria-vintage">
+                    <a href="collares.html" class="enlace-polaroid">
+                        <div class="marco-polaroid">
+                            <img src="imagenes/corazonorquidea2.JPG" alt="Colección Collares" class="imagen-vintage">
+                            <div class="pie-polaroid">
+                                <span class="nombre-polaroid-mano">Corazón de Orquídea</span>
+                            </div>
+                        </div>
+                    <div></div>
+                    </a>
+                    <h4>Colección Collares</h4>
+            </div>            
+<!-- 2. CATEGORÍA: CROCHET -->
+                <div class="tarjeta-categoria-vintage">
+                    <a href="crochet.html" class="enlace-polaroid">
+                        <div class="marco-polaroid">
+                            <!-- Aquí pondrás la foto de tu Top Primavera -->
+                            <img src="imagenes/prenda1.jpeg" alt="Colección Crochet" class="imagen-vintage">
+                            <div class="pie-polaroid">
+                                <span class="nombre-polaroid-mano">Top Primavera</span>
+                            </div>
+                        </div>
+                    </a>
+                    <h4>Colección Crochet</h4>
+                </div>
+
+                <!-- 3. CATEGORÍA: CERÁMICA -->
+                <div class="tarjeta-categoria-vintage">
+                    <a href="ceramica.html" class="enlace-polaroid">
+                        <div class="marco-polaroid">
+                            <!-- Aquí pondrás la foto de tu Cenicero -->
+                            <img src="imagenes/ceramica1.jpeg" alt="Colección Cerámica" class="imagen-vintage">
+                            <div class="pie-polaroid">
+                                <span class="nombre-polaroid-mano">Cenicero personalizado</span>
+                            </div>
+                        </div>
+                    </a>
+                    <h4>Colección Cerámica</h4>
+                </div>
+
+            </div>
+
+            <!-- Eliminamos el grid dinámico viejo de JS para que no pinte nada automático aquí -->
         </section>
+
 
         <section id="contacto" class="seccion-contacto">
             <div class="contenedor-contacto-unico">
@@ -78,7 +121,8 @@
         <div class="contenido-footer">
             <p class="copyright">&copy; 2026 CCS Handmade. Hecho a mano con amor.</p>
             <div class="redes-sociales">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.instagram.com/byccs_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.tiktok.com/@by.ccs" target="_blank" rel="noopener noreferrer">TikTok</a>
                 <a href="#contacto">Contacto</a>
             </div>
         </div>

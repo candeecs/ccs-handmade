@@ -5,14 +5,14 @@ const misProductos = [
     {
         id: "amigurumis",
         titulo: "Amigurumi Cozy",
-        categoria: "Amigurumis",
+        categoria: "Amigurumis (proximamente)",
         imagen: "imagenes/amigurumi1.jpeg",
         precio: "Próximamente"
     },
     {
         id: "ropaCrochet",
         titulo: "Top Primavera",
-        categoria: "Prendas a crochet",
+        categoria: "Crochet",
         imagen: "imagenes/prenda1.jpeg",
         precio: "Próximamente"
     },
@@ -148,3 +148,22 @@ window.onload = function() {
     inicializarMenuMovil();
     inicializarFormularioAsincrono();
 };
+
+// ==========================================
+// AUTOMATIZACIÓN DEL CARRUSEL (CADA 15 SEGUNDOS)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const carruseles = document.querySelectorAll('.carrusel-vintage');
+
+    carruseles.forEach(carrusel => {
+        setInterval(() => {
+            const anchoFoto = carrusel.clientWidth;
+            // Si llegamos al final del carrusel, vuelve al principio; si no, avanza una foto
+            if (carrusel.scrollLeft + anchoFoto >= carrusel.scrollWidth) {
+                carrusel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                carrusel.scrollTo({ left: carrusel.scrollLeft + anchoFoto, behavior: 'smooth' });
+            }
+        }, 15000); // 15000 milisegundos = 15 segundos
+    });
+});
